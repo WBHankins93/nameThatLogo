@@ -1,69 +1,140 @@
 var userInput = "";
 var score = 0;
 var index = 0;
+let time = 30;
 
 
 var logos = [
   {
-    "brand": "Pepsi",
-    "logo": "logos/pepsi.png"
+    brand: "Apple",
+    logo: "logos/apple.png"
   }, {
-    "brand": "Reddit",
-    "logo": "logos/reddit.png"
+    brand: "Nasa",
+    logo: "logos/nasa.jpg"
   }, {
-    "brand": "Lexus",
-    "logo": "logos/lexus.png"
+    brand: "Yellow Pages",
+    logo: "logos/yellow-pages.gif"
   }, {
-    "brand": "Versace",
-    "logo": "logos/versace.jpg"
+    brand: "Louis Vuitton",
+    logo: "logos/lv.jpg"
   }, {
-    "brand": "Lays",
-    "logo": "logos/lays.jpg"
+    brand: "Xbox",
+    logo: "logos/xbox.jpg"
   }, {
-    "brand": "Firefox",
-    "logo": "logos/firefox.jpg"
+    brand: "Target",
+    logo: "logos/target.jpg"
   }, {
-    "brand": "Lambo",
-    "logo": "logos/lambo.jpg"
+    brand: "Dominos",
+    logo: "logos/dominos.gif"
   }, {
-    "brand": "Nike",
-    "logo": "logos/nike.jpg"
+    brand: "Porsche",
+    logo: "logos/porsche.png"
   }, {
-    "brand": "Starbucks",
-    "logo": "logos/starbucks.jpg"
+    brand: "BP",
+    logo: "logos/bp.jpg"
   }, {
-    "brand": "Blackberry",
-    "logo": "logos/blackberry.jpg"
+    brand: "Microsoft",
+    logo: "logos/microsoft.jpg"
   }, {
-    "brand": "Cartoon Network",
-    "logo": "logos/cartoon-network.jpg"
+    brand: "Pepsi",
+    logo: "logos/pepsi.png"
   }, {
-    "brand": "Jagermeister",
-    "logo": "logos/jagermeister.jpg"
+    brand: "Reddit",
+    logo: "logos/reddit.png"
   }, {
-    "brand": "Bridgestone",
-    "logo": "logos/bridgestone.jpg"
+    brand: "Lexus",
+    logo: "logos/lexus.jpg"
   }, {
-    "brand": "BMW",
-    "logo": "logos/bmw.jpg"
+    brand: "Versace",
+    logo: "logos/versace.jpg"
   }, {
-    "brand": "Best Buy",
-    "logo": "logos/bestbuy.gif"
+    brand: "Lays",
+    logo: "logos/lays.jpg"
   }, {
-    "brand": "Uber",
-    "logo": "logos/uber.jpg"
+    brand: "Firefox",
+    logo: "logos/firefox.jpg"
   }, {
-    "brand": "Bacardi",
-    "logo": "logos/bacardi.jpg"
+    brand: "Lambo",
+    logo: "logos/lambo.jpg"
   }, {
-    "brand": "Stella Artois",
-    "logo": "logos/stella-artois.png"
+    brand: "Nike",
+    logo: "logos/nike.jpg"
   }, {
-    "brand": "Quaker Oats",
-    "logo": "logos/quaker-oats.gif"
+    brand: "Starbucks",
+    logo: "logos/starbucks.jpg"
   }, {
-    "brand": "Subaru",
-    "logo": "logos/subaru.jpg"
+    brand: "Blackberry",
+    logo: "logos/blackberry.jpg"
+  }, {
+    brand: "Cartoon Network",
+    logo: "logos/cartoon-network.jpg"
+  }, {
+    brand: "Jagermeister",
+    logo: "logos/jagermeister.jpg"
+  }, {
+    brand: "Bridgestone",
+    logo: "logos/bridgestone.jpg"
+  }, {
+    brand: "BMW",
+    logo: "logos/bmw.jpg"
+  }, {
+    brand: "Best Buy",
+    logo: "logos/bestbuy.gif"
+  }, {
+    brand: "Uber",
+    logo: "logos/uber.jpg"
+  }, {
+    brand: "Bacardi",
+    logo: "logos/bacardi.jpg"
+  }, {
+    brand: "Stella Artois",
+    logo: "logos/stella-artois.png"
+  }, {
+    brand: "Quaker Oats",
+    logo: "logos/quaker-oats.gif"
+  }, {
+    brand: "Subaru",
+    logo: "logos/subaru.jpg"
   }
 ];
 console.log(logos[index].logo);
+
+console.log(logos)
+
+let showCards = function() {
+
+  for (let i = 0; i < logos.length; i++) {
+    let imgElement = document.createElement('img')
+    imgElement.src = logos[i].logo;
+    console.log(imgElement);
+    $('table').append(imgElement)
+  }
+  $('img').css({
+    'height' : '80px',
+    'width' : '100px',
+    'border' : '1px solid black',
+    'margin' : '5px',
+    'padding' : '5px'
+  });
+  $('table').css({
+    'border' : '5px solid black',
+
+  })
+}
+
+showCards();
+
+
+// Creating the Timer
+const setTimer = () => {
+  const timer = setInterval(function() {
+    console.log(time);
+    time--;
+
+    if(time === 0) {
+      clearInterval(timer);
+      console.log('GAME OVER');
+      $('#round').text('round ' + round);
+    }
+  }, 1000);
+}
