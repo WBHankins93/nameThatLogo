@@ -4,16 +4,24 @@ let index = 0;
 let counter = 1;
 let userAnswers = [];
 let time = 30;
-let array = ['Apple', 'Nasa', 'YellowPages', 'LouisV', 'Xbox', 'Target'];
-for(let i = 0; i < array.length; i++) {
-$('#' + array[i]).on('click', () => {
+let arrayLogo = ['Apple', 'Nasa', 'YellowPages', 'LouisV', 'Xbox', 'Target', 'Dominos', 'Porsche', 'BP', 'Microsoft', 'Pepsi', 'Reddit', 'Lexus', 'Versace', 'Lays', 'Firefox', 'Lambo', 'Nike', 'Starbucks',
+'Blackberry', 'Subaru', 'CartoonNetwork', 'Jagermeister', 'Bridgestone', 'BMW', 'BestBuy', 'Uber', 'Bacardi', 'StellaArtois', 'QuakerOats' ];
 
-  let Answer = $('#' + array[i]).attr('id');
+//--When logo is clicked, modal pops up to answer question
+for(let i = 0; i < arrayLogo.length; i++) {
+$('#' + arrayLogo[i]).on('click', () => {
+
+  let Answer = $('#' + arrayLogo[i]).attr('id');
   console.log(Answer);
   $('.answer').text(Answer);
   $('#' + Answer).remove();
 })
 }
+
+
+
+
+
 // const logos = [
 //   {
 //     brand: "Apple",
@@ -142,21 +150,23 @@ $('#' + array[i]).on('click', () => {
 // })
 
 // Checking for Correct answers
-const correctAnswers = () => {
 
-}
+
 
 
 // Creating the Timer
 const setTimer = () => {
-  const timer = setInterval(function() {
+  const timer = setInterval(() => {
     console.log(time);
+
+  $('#timer').text('Timer: ' + time + 's');
+    //console.log(logTime);
     time--;
 
     if(time === 0) {
       clearInterval(timer);
       console.log('GAME OVER');
-      $('#timer').text('Timer: ' + time + 's');
+      // $('#timer').text('Timer: ' + time + 's');
     }
   }, 1000);
 }
@@ -167,3 +177,21 @@ $('.startBtn').on('click', () => {
   const userName = $('#userNameInput').val();
 	$('#userDisplay').html('Welcome, ' + userName + '!');
 });
+
+
+$('.submitAnswer').on('click', () => {
+  const logoName = $('.answers').val();
+  console.log(logoName);
+  checkCorrectAnswer;
+
+  // if(logoName === ) {
+  //   return true;
+  // }
+})
+const checkCorrectAnswer = (Answer) => {
+  if('Answer' === 'logoName') {
+    console.log('Correct')
+  } else {
+    console.log('Wrong')
+  }
+}
