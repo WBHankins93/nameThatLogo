@@ -6,34 +6,44 @@
   <title>Name That Logo!</title>
   <!-- <link href="styles/style.css"> -->
   <link rel="stylesheet" href="styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+
 </head>
 
 <body>
+
   <h1>Name That Logo!</h1>
-  <input type="text" name="" value="" id="userNameInput">
-  <span id="timer">Timer: 30s</span>
-  <button class="startBtn" type="button" name="button">START</button>
   <p id="userDisplay"></p>
 
-  <h2>Instructions</h2>
-  <h3>
+  <div class="userName">
+    <input type="text" name="" value="" id="userNameInput">
+    <span id="timer">Timer: 30s</span>
+    <button class="startBtn" type="button" name="button">START</button>
+    <!-- <p id="userDisplay"></p> -->
+  </div>
+
+  <div class="instruct">
+    <h2>Instructions</h2>
+    <h3>
       <ol>
         <li>Enter name before beginning game</li>
         <li>To begin game, press START</li>
         <li>Correctly guess each logo until time runs out or user guesses all answers</li>
       </ol>
     </h3>
+  </div>
 
   <div class="checkAnswers">
     <input class="answers" type="input" name="" value="">
     <button class="submitAnswer" type="button" name="button">Submit</button>
   </div>
 
+
   <table class="logoCollection">
     <tr>
 
-        <td><img src="logos/apple.png" alt="" class="brandLogo" id="Apple">
-        </td>
+      <td><img src="logos/apple.png" alt="" class="brandLogo" id="Apple">
+      </td>
 
 
       <div class='logi'>

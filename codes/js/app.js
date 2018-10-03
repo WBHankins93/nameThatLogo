@@ -7,20 +7,17 @@ let time = 30;
 let arrayLogo = ['Apple', 'Nasa', 'YellowPages', 'LouisV', 'Xbox', 'Target', 'Dominos', 'Porsche', 'BP', 'Microsoft', 'Pepsi', 'Reddit', 'Lexus', 'Versace', 'Lays', 'Firefox', 'Lambo', 'Nike', 'Starbucks',
 'Blackberry', 'Subaru', 'CartoonNetwork', 'Jagermeister', 'Bridgestone', 'BMW', 'BestBuy', 'Uber', 'Bacardi', 'StellaArtois', 'QuakerOats' ];
 
-//--When logo is clicked, modal pops up to answer question
+//--Logo will disappear when clicked
 for(let i = 0; i < arrayLogo.length; i++) {
 $('#' + arrayLogo[i]).on('click', () => {
 
   let Answer = $('#' + arrayLogo[i]).attr('id');
+
   console.log(Answer);
-  $('.answer').text(Answer);
-  $('#' + Answer).remove();
+  // $('.answer').text(Answer);
+  // $('#' + Answer).remove();
 })
 }
-
-
-
-
 
 // const logos = [
 //   {
@@ -165,7 +162,7 @@ const setTimer = () => {
 
     if(time === 0) {
       clearInterval(timer);
-      console.log('GAME OVER');
+      alert('Good Game!!!');
       // $('#timer').text('Timer: ' + time + 's');
     }
   }, 1000);
@@ -178,9 +175,16 @@ $('.startBtn').on('click', () => {
 	$('#userDisplay').html('Welcome, ' + userName + '!');
 });
 
+const checkLogo = (logo, array) => {
 
+}
 $('.submitAnswer').on('click', () => {
-  const logoName = $('.answers').val();
+  let logoName = $('.answers').val();
+  if(logoName === $('.answers').val()) {
+    console.log('We did it!')
+  } else {
+    console.log('Dammit')
+  }
   console.log(logoName);
   checkCorrectAnswer;
 
@@ -188,10 +192,14 @@ $('.submitAnswer').on('click', () => {
   //   return true;
   // }
 })
+
+
 const checkCorrectAnswer = (Answer) => {
-  if('Answer' === 'logoName') {
+  for (let i =0; i < arrayLogo.length; i++)
+  if(arrayLogo[i] === arrayLogo[i]) {
     console.log('Correct')
   } else {
     console.log('Wrong')
   }
 }
+checkCorrectAnswer();
