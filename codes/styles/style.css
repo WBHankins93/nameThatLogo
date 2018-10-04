@@ -6,13 +6,35 @@ background-size: cover;
 background-repeat: no-repeat;
 }
 
-img {
+/* .contentColumn {
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+} */
 
-  max-width: 80px;
-  max-height: 60px;
+img {
+  top: 20%;
+  left: 75%;
+  max-width: 200px;
+  max-height: 180px;
   padding: 10px;
   margin: 10px;
+  /* mix-blend-mode: multiply; */
 
+
+
+}
+#timer {
+  color: white;
+  font-size: 50px;
+  -webkit-text-stroke: 1px white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
 }
 
 .userName {
@@ -33,7 +55,7 @@ table {
   left: 80%;
   justify-content: space-between;
 }
-h1 {
+header {
   font-size: 60px;
   justify-content: center;
   color: grey;
@@ -50,9 +72,56 @@ img:hover {
   background-color: green;
 }
 
-p {
+#inGame {
+    top: 34.8544372%;
+    left: 28.42673%;
+    margin-bottom: auto;
+    position: relative;
+    max-width: 350px;
+    height: 300px;
+    border: 1px solid #c3c3c3;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+  border: 5px dotted red;
+  background: white;
+}
+.startHidden {
+  margin: 1px;
+  padding: 5px;
+  justify-content: space-between;
+  display: inline-block;
+}
+
+#userDisplay {
   font-size: 50px;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  text-shadow:
+      3px 3px 0 #000,
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
 }
 .instruct {
   color: white;
+  font-family: 'Quicksand', sans-serif;
+  max-width: 150px;
+  float: left;
+  text-shadow:
+      3px 3px 0 #000,
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+#initQuestion {
+  color: white;
+  font-family: 'BioRhyme', serif;
+
 }

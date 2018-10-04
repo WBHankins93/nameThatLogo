@@ -7,20 +7,32 @@
   <!-- <link href="styles/style.css"> -->
   <link rel="stylesheet" href="styles/style.css">
   <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme" rel="stylesheet">
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.js'></script>
 
 </head>
 
 <body>
 
-  <h1>Name That Logo!</h1>
+  <header>Name That Logo!</header>
   <p id="userDisplay"></p>
 
   <div class="userName">
     <input type="text" name="" value="" id="userNameInput">
-    <span id="timer">Timer: 30s</span>
-    <button class="startBtn" type="button" name="button">START</button>
-    <!-- <p id="userDisplay"></p> -->
+    <!-- <span id="timer">Timer: 30s</span> -->
+    <!-- <button id="playBtn" type="button" name="button">START</button> -->
   </div>
+  <span id="timer">Timer: <tag id="colorNum">30</tag>s</span>
+
+  <div id="beforeGame">
+      <p id="initQuestion">Can you name the companies or technologies that match these logos?</p>
+      <button id="playBtn">Click to play</button>
+  </div>
+
 
   <div class="instruct">
     <h2>Instructions</h2>
@@ -33,66 +45,17 @@
     </h3>
   </div>
 
-  <div class="checkAnswers">
-    <input class="answers" type="input" name="" value="">
-    <button class="submitAnswer" type="button" name="button">Submit</button>
+  <div id="inGame">
+    <input class="startHidden" id="guessbox" type="input" name="guess" value="">
+    <button class="startHidden" id="submitBtn">Submit</button>
   </div>
 
 
-  <table class="logoCollection">
-    <tr>
-
-      <td><img src="logos/apple.png" alt="" class="brandLogo" id="Apple">
-      </td>
-
-
-      <div class='logi'>
-        <td><img src="logos/nasa.jpg" alt="" class="brandLogo" id="Nasa"></td>
-      </div>
-
-      <td><img src="logos/yellow-pages.gif" alt="" class="brandLogo" id="YellowPages"></td>
-      <td><img src="logos/lv.jpg" alt="" class="brandLogo" id="LouisV"></td>
-      <td><img src="logos/xbox.jpg" alt="" class="brandLogo" id="Xbox"></td>
-      <td><img src="logos/target.jpg" alt="" class="brandLogo" id="Target"></td>
-    </tr>
-
-    <tr>
-      <td><img src="logos/dominos.gif" alt="" class="brandLogo" id="Dominos"></td>
-      <td><img src="logos/porsche.png" alt="" class="brandLogo" id="Porsche"></td>
-      <td><img src="logos/bp.jpg" alt="" class="brandLogo" id="BP"></td>
-      <td><img src="logos/microsoft.jpg" alt="" class="brandLogo" id="Microsoft"></td>
-      <td><img src="logos/pepsi.png" alt="" class="brandLogo" id="Pepsi"></td>
-      <td><img src="logos/reddit.png" alt="" class="brandLogo" id="Reddit"></td>
-    </tr>
-
-    <tr>
-      <td><img src="logos/lexus.jpg" alt="" class="brandLogo" id="Lexus"></td>
-      <td><img src="logos/versace.jpg" alt="" class="brandLogo" id="Versace"></td>
-      <td><img src="logos/lays.jpg" alt="" class="brandLogo" id="Lays"></td>
-      <td><img src="logos/firefox.jpg" alt="" class="brandLogo" id="Firefox"></td>
-      <td><img src="logos/lambo.jpg" alt="" class="brandLogo" id="Lambo"></td>
-      <td><img src="logos/nike.jpg" alt="" class="brandLogo" id="Nike"></td>
-    </tr>
-
-    <tr>
-      <td><img src="logos/starbucks.jpg" alt="" class="brandLogo" id="Starbucks"></td>
-      <td><img src="logos/blackberry.jpg" alt="" class="brandLogo" id="Blackberry"></td>
-      <td><img src="logos/subaru.jpg" alt="" class="brandLogo" id="Subaru"></td>
-      <td><img src="logos/cartoon-network.jpg" alt="" class="brandLogo" id="CartoonNetwork"></td>
-      <td><img src="logos/jagermeister.jpg" alt="" class="brandLogo" id="Jagermeister"></td>
-      <td><img src="logos/bridgestone.jpg" alt="" class="brandLogo" id="Bridgestone"></td>
-    </tr>
-
-    <tr>
-      <td><img src="logos/bmw.jpg" alt="" class="brandLogo" id="BMW"></td>
-      <td><img src="logos/bestbuy.gif" alt="" class="brandLogo" id="BestBuy"></td>
-      <td><img src="logos/uber.jpg" alt="" class="brandLogo" id="Uber"></td>
-      <td><img src="logos/bacardi.jpg" alt="" class="brandLogo" id="Bacardi"></td>
-      <td><img src="logos/stella-artois.png" alt="" class="brandLogo" id="StellaArtois"></td>
-      <td><img src="logos/quaker-oats.gif" alt="" class="brandLogo" id="QuakerOats"></td>
-    </tr>
-
-  </table>
+  <div id="afterGame">
+      <!-- <p>Congratulations! Your score was:</p> -->
+      <h1 id="score"></h1>
+      <p id="missed"></p>
+    </div>
 
   <div class='answer'>
 
@@ -102,9 +65,7 @@
 
 
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.js'></script>
+
   <script src="js/app.js"></script>
 
 </body>

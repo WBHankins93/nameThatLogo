@@ -4,163 +4,90 @@ let index = 0;
 let counter = 1;
 let userAnswers = [];
 let time = 30;
-let arrayLogo = ['Apple', 'Nasa', 'YellowPages', 'LouisV', 'Xbox', 'Target', 'Dominos', 'Porsche', 'BP', 'Microsoft', 'Pepsi', 'Reddit', 'Lexus', 'Versace', 'Lays', 'Firefox', 'Lambo', 'Nike', 'Starbucks',
-'Blackberry', 'Subaru', 'CartoonNetwork', 'Jagermeister', 'Bridgestone', 'BMW', 'BestBuy', 'Uber', 'Bacardi', 'StellaArtois', 'QuakerOats' ];
+var arrayOfIcons = ["logos/apple.png", "logos/nasa.jpg", "logos/firefox.jpg", "logos/nike.jpg", "logos/xbox.jpg", "logos/lays.jpg", "logos/dominos.gif", "logos/porsche.png", "logos/bp.jpg", "logos/microsoft.jpg", "logos/bacardi.jpg", "logos/bestbuy.gif", "logos/blackberry.jpg", "logos/bmw.jpg", "logos/bridgestone.jpg", "logos/jagermeister.jpg", "logos/lambo.jpg", "logos/lexus.jpg", "logos/pepsi.png",
+  "logos/lv.jpg",
+  "logos/cartoon-network.jpg", "logos/quaker-oats.gif", "logos/reddit.png", "logos/starbucks.jpg", "logos/stella-artois.png", "logos/subaru.jpg", "logos/target.jpg", "logos/uber.jpg", "logos/versace.jpg", "logos/yellow-pages.gif"
+];
 
-//--Logo will disappear when clicked
-for(let i = 0; i < arrayLogo.length; i++) {
-$('#' + arrayLogo[i]).on('click', () => {
+var correctAnswers = ["apple", "nasa", "firefox", "nike", "xbox", "lays", "dominos", "porsche", "bp", "microsoft", "bacardi", "bestbuy", "blackberry", "bmw", "bridgestone", "jagermeister", "lambo", "lexus", "pepsi",
+  "louis vuitton", "cartoon network", "quaker oats", "reddit", "starbucks", "stella artois", "subaru", "target", "uber", "versace", "yellow pages"
+];
 
-  let Answer = $('#' + arrayLogo[i]).attr('id');
 
-  console.log(Answer);
-  // $('.answer').text(Answer);
-  // $('#' + Answer).remove();
-})
+
+function startGame() {
+  document.getElementById("beforeGame").style.display = "none";
+  document.getElementById("inGame").style.display = "inline";
+  document.getElementById("guessbox").focus();
+  $('#inGame').append('<img id="image" src=' + arrayOfIcons.shift() + '>');
+
 }
 
-// const logos = [
-//   {
-//     brand: "Apple",
-//     logo: "logos/apple.png"
-//   }, {
-//     brand: "Nasa",
-//     logo: "logos/nasa.jpg"
-//   }, {
-//     brand: "Yellow Pages",
-//     logo: "logos/yellow-pages.gif"
-//   }, {
-//     brand: "Louis Vuitton",
-//     logo: "logos/lv.jpg"
-//   }, {
-//     brand: "Xbox",
-//     logo: "logos/xbox.jpg"
-//   }, {
-//     brand: "Target",
-//     logo: "logos/target.jpg"
-//   }, {
-//     brand: "Dominos",
-//     logo: "logos/dominos.gif"
-//   }, {
-//     brand: "Porsche",
-//     logo: "logos/porsche.png"
-//   }, {
-//     brand: "BP",
-//     logo: "logos/bp.jpg"
-//   }, {
-//     brand: "Microsoft",
-//     logo: "logos/microsoft.jpg"
-//   }, {
-//     brand: "Pepsi",
-//     logo: "logos/pepsi.png"
-//   }, {
-//     brand: "Reddit",
-//     logo: "logos/reddit.png"
-//   }, {
-//     brand: "Lexus",
-//     logo: "logos/lexus.jpg"
-//   }, {
-//     brand: "Versace",
-//     logo: "logos/versace.jpg"
-//   }, {
-//     brand: "Lays",
-//     logo: "logos/lays.jpg"
-//   }, {
-//     brand: "Firefox",
-//     logo: "logos/firefox.jpg"
-//   }, {
-//     brand: "Lambo",
-//     logo: "logos/lambo.jpg"
-//   }, {
-//     brand: "Nike",
-//     logo: "logos/nike.jpg"
-//   }, {
-//     brand: "Starbucks",
-//     logo: "logos/starbucks.jpg"
-//   }, {
-//     brand: "Blackberry",
-//     logo: "logos/blackberry.jpg"
-//   }, {
-//     brand: "Subaru",
-//     logo: "logos/subaru.jpg"
-//   }, {
-//     brand: "Cartoon Network",
-//     logo: "logos/cartoon-network.jpg"
-//   }, {
-//     brand: "Jagermeister",
-//     logo: "logos/jagermeister.jpg"
-//   }, {
-//     brand: "Bridgestone",
-//     logo: "logos/bridgestone.jpg"
-//   }, {
-//     brand: "BMW",
-//     logo: "logos/bmw.jpg"
-//   }, {
-//     brand: "Best Buy",
-//     logo: "logos/bestbuy.gif"
-//   }, {
-//     brand: "Uber",
-//     logo: "logos/uber.jpg"
-//   }, {
-//     brand: "Bacardi",
-//     logo: "logos/bacardi.jpg"
-//   }, {
-//     brand: "Stella Artois",
-//     logo: "logos/stella-artois.png"
-//   }, {
-//     brand: "Quaker Oats",
-//     logo: "logos/quaker-oats.gif"
-//   }
-// ];
-// console.log(logos[index].logo);
-//
-// console.log(logos)
+function submit() {
+  userAnswers.push(document.getElementById("guessbox").value.replace(/\s+/g, '').toLowerCase());
+  if (arrayOfIcons.length === 0) {
+    endGame();
+  }
+  document.getElementById("guessbox").value = "";
+  document.getElementById("guessbox").focus();
 
-// let showCards = function() {
-//
-//   for (let i = 0; i < logos.length; i++) {
-//     let imgElement = document.createElement('img')
-//     imgElement.src = logos[i].logo;
-//     console.log(imgElement);
-//     $('table').append(imgElement)
-//   }
-//   $('img').css({
-//     'height' : '80px',
-//     'width' : '100px',
-//     'border' : '1px solid black',
-//     'margin' : '5px',
-//     'padding' : '5px'
-//   });
-//   $('table').css({
-//     'border' : '5px solid black',
-//     'max-width' : '800px',
-//     'max-height' : '500px',
-//     'float' : 'right',
-//   })
-// }
-//
-// showCards();
+  counter++;
+  console.log(counter);
 
-// $('.brandLogo').on('click', () => {
-//   for (i=0;i<table.length;i++)
-//   console.log(logos[i].brand)
-// })
+  $('#image').remove();
+  $('#inGame').append('<img id="image" src=' + arrayOfIcons.splice(Math.floor(Math.random() * arrayOfIcons.length), 1) + '>');
+}
 
-// Checking for Correct answers
+function endGame() {
+  var score = 0;
+  var missedAnswers = [];
+  for (var i = 0; i < userAnswers.length; i++) {
+    if (userAnswers[i] == correctAnswers[i]) {
+      score++;
+    } else {
+      missedAnswers.push(" " + correctAnswers[i]);
+    }
+  }
+  document.getElementById("score").innerHTML = score + " / " + correctAnswers.length;
+  if (score < correctAnswers.length) {
+    document.getElementById("missed").innerHTML = "(In case you were wondering, you missed: " + missedAnswers + ")";
+  }
+  document.getElementById("inGame").style.display = "none";
+  document.getElementById("afterGame").style.display = "inline";
+}
+
+document.getElementById("playBtn").onclick = function() {
+  startGame()
+};
+document.getElementById("submitBtn").onclick = function() {
+  submit();
+};
+document.getElementById("guessbox")
+  .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+      document.getElementById("submitBtn").click();
+    }
+  });
 
 
-
-
+///////////////////////////////////////////////////////////
 // Creating the Timer
 const setTimer = () => {
   const timer = setInterval(() => {
     console.log(time);
 
-  $('#timer').text('Timer: ' + time + 's');
+    $('#timer').text('Timer: ' + time + 's');
     //console.log(logTime);
     time--;
+    if (time < 10) {
+      $('tag').css({
+        "font-color": "red",
+        "font-size": "75px"
+      });
+    }
 
-    if(time === 0) {
+    if (time === 0) {
       clearInterval(timer);
       alert('Good Game!!!');
       // $('#timer').text('Timer: ' + time + 's');
@@ -168,38 +95,9 @@ const setTimer = () => {
   }, 1000);
 }
 
-//--Clicking images
-$('.startBtn').on('click', () => {
+//--Logging username and starting timer of game
+$('#playBtn').on('click', () => {
   setTimer();
   const userName = $('#userNameInput').val();
-	$('#userDisplay').html('Welcome, ' + userName + '!');
+  $('#userDisplay').html('Welcome, ' + userName + '!');
 });
-
-const checkLogo = (logo, array) => {
-
-}
-$('.submitAnswer').on('click', () => {
-  let logoName = $('.answers').val();
-  if(logoName === $('.answers').val()) {
-    console.log('We did it!')
-  } else {
-    console.log('Dammit')
-  }
-  console.log(logoName);
-  checkCorrectAnswer;
-
-  // if(logoName === ) {
-  //   return true;
-  // }
-})
-
-
-const checkCorrectAnswer = (Answer) => {
-  for (let i =0; i < arrayLogo.length; i++)
-  if(arrayLogo[i] === arrayLogo[i]) {
-    console.log('Correct')
-  } else {
-    console.log('Wrong')
-  }
-}
-checkCorrectAnswer();
