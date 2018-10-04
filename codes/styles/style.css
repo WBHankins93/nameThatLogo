@@ -38,9 +38,7 @@ img {
       -1px 1px 0 #000,
        1px 1px 0 #000;
 }
-h1{
-  align-items: center;
-}
+
 
 .userName {
   background-color: white;
@@ -62,11 +60,8 @@ table {
 }
 header {
   font-size: 60px;
+  top: 40%;
   color: grey;
-  top: 50%;
-  left: 50%;
-  align-items: center;
-  position: fixed;
   font-family: 'Bungee', cursive;
   -webkit-text-stroke: 1px white;
    text-shadow:
