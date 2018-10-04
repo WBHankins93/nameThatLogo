@@ -14,8 +14,9 @@ background-repeat: no-repeat;
 } */
 
 img {
-  top: 20%;
-  left: 75%;
+  top: 8%;
+  left: 18%;
+  position: relative;
   max-width: 200px;
   max-height: 180px;
   padding: 10px;
@@ -29,12 +30,16 @@ img {
   color: white;
   font-size: 50px;
   -webkit-text-stroke: 1px white;
+
    text-shadow:
        3px 3px 0 #000,
      -1px -1px 0 #000,
       1px -1px 0 #000,
       -1px 1px 0 #000,
        1px 1px 0 #000;
+}
+h1{
+  align-items: center;
 }
 
 .userName {
@@ -57,8 +62,11 @@ table {
 }
 header {
   font-size: 60px;
-  justify-content: center;
   color: grey;
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  position: fixed;
   font-family: 'Bungee', cursive;
   -webkit-text-stroke: 1px white;
    text-shadow:
@@ -73,13 +81,18 @@ img:hover {
 }
 
 #inGame {
-    top: 34.8544372%;
+    top: 38.8544372%;
     left: 28.42673%;
     margin-bottom: auto;
+    justify-content: center;
+    grid-column: 2;
     position: relative;
+    margin-top: 2.8%;
     max-width: 350px;
     height: 300px;
+    margin-right: auto;
     border: 1px solid #c3c3c3;
+    /* border-radius: 30%; */
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -90,15 +103,19 @@ img:hover {
   background: white;
 }
 .startHidden {
+  max-width: 65px;
+  max-height: 30px
   margin: 1px;
   padding: 5px;
   justify-content: space-between;
-  display: inline-block;
+  flex-direction: row;
 }
 
 #userDisplay {
   font-size: 50px;
   color: white;
+  max-width: 300px;
+  position: fixed;
   font-family: 'Pacifico', cursive;
   text-shadow:
       3px 3px 0 #000,
@@ -112,6 +129,8 @@ img:hover {
   font-family: 'Quicksand', sans-serif;
   max-width: 150px;
   float: left;
+
+  border: 2px solid silver;
   text-shadow:
       3px 3px 0 #000,
     -1px -1px 0 #000,
@@ -120,8 +139,32 @@ img:hover {
       1px 1px 0 #000;
 }
 
+.instructText {
+  z-index: 1;
+}
+
 #initQuestion {
   color: white;
   font-family: 'BioRhyme', serif;
 
+}
+
+.tracking-in-expand-fwd-top {
+  /* top: 40%; */
+	animation: tracking-in-expand-fwd-top 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes tracking-in-expand-fwd-top {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px) translateY(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
 }

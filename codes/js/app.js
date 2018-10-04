@@ -20,6 +20,7 @@ function startGame() {
   document.getElementById("inGame").style.display = "inline";
   document.getElementById("guessbox").focus();
   $('#inGame').append('<img id="image" src=' + arrayOfIcons.shift() + '>');
+  // $('.userName').remove();
 
 }
 
@@ -60,6 +61,7 @@ document.getElementById("playBtn").onclick = function() {
   startGame()
 };
 document.getElementById("submitBtn").onclick = function() {
+
   submit();
 };
 document.getElementById("guessbox")
