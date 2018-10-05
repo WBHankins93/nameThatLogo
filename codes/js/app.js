@@ -13,10 +13,36 @@ var correctAnswers = ["apple", "nasa", "firefox", "nike", "xbox", "lays", "domin
   "louis vuitton", "cartoon network", "quaker oats", "reddit", "starbucks", "stella artois", "subaru", "target", "uber", "versace", "yellow pages"
 ];
 
+// function myFunction() {
+// swal({
+//   title: "Do you want to play a game?",
+//   text: "Once you begin, there is no way out!",
+//   icon: "warning",
+//   buttons: true,
+//   dangerMode: true,
+// })
+// .then((willDelete) => {
+//   if (willDelete) {
+//     swal({
+//       title: "Welcome to Name That Logo!",
+//       text: "After clicking 'ok', Enter username and Click to Start "
+//     });
+//   }
+// })
 
+// for (let i=0; i< arrayOfIcons.length; i++) {
+//
+//   if(arrayOfIcons[i] === correctAnswers[i]) {
+//     arrayOfIcons[i] = correctAnswers[i];
+//     console.log(arrayOfIcons[i] + 'equals to ' + correctAnswers[i]);
+//
+//
+  // console.log(arrayOfIcons[i]);
+  // console.log(correctAnswers[i]);
+// }
 
 function startGame() {
-  document.getElementById("beforeGame").style.display = "none";
+  document.getElementById("userName").style.display = "none";
   document.getElementById("inGame").style.display = "inline";
   document.getElementById("guessbox").focus();
   $('#inGame').append('<img id="image" src=' + arrayOfIcons.shift() + '>');
@@ -26,9 +52,13 @@ function startGame() {
 
 function submit() {
   userAnswers.push(document.getElementById("guessbox").value.replace(/\s+/g, '').toLowerCase());
+  console.log(userAnswers);
   if (arrayOfIcons.length === 0) {
     endGame();
   }
+
+
+
   document.getElementById("guessbox").value = "";
   document.getElementById("guessbox").focus();
 
@@ -40,10 +70,9 @@ function submit() {
 }
 
 function endGame() {
-  var score = 0;
-  var missedAnswers = [];
+
   for (var i = 0; i < userAnswers.length; i++) {
-    if (userAnswers[i] == correctAnswers[i]) {
+    if (userAnswers[i] === correctAnswers[i]) {
       score++;
     } else {
       missedAnswers.push(" " + correctAnswers[i]);
@@ -51,7 +80,7 @@ function endGame() {
   }
   document.getElementById("score").innerHTML = score + " / " + correctAnswers.length;
   if (score < correctAnswers.length) {
-    document.getElementById("missed").innerHTML = "(In case you were wondering, you missed: " + missedAnswers + ")";
+    document.getElementById("missed").innerHTML = "(In case you were wondering, you missed: " + score + ")";
   }
   document.getElementById("inGame").style.display = "none";
   document.getElementById("afterGame").style.display = "inline";
@@ -72,26 +101,27 @@ document.getElementById("guessbox")
     }
   });
 
-
-///////////////////////////////////////////////////////////
 // Creating the Timer
 const setTimer = () => {
   const timer = setInterval(() => {
     console.log(time);
 
-    $('#timer').text('Timer: ' + time + 's');
+    $('#timer').text('Timer: ' + time);
     //console.log(logTime);
     time--;
-    if (time < 10) {
-      $('tag').css({
-        "font-color": "red",
-        "font-size": "75px"
-      });
-    }
 
-    if (time === 0) {
+    if (time === 0) {  var score = 0;
+      var missedAnswers = [];
+      for ( var i = 0; i < userAnswers.length; i++ ) {
+      if (correctAnswers.includes(userAnswers[i])) {
+        score++;
+      } else if (time === 0) {
+        endGame();
+      }
+      };
+
+      swal('Good Game!!! ' + ' You got ' + score + ' /30 Logos correct!');
       clearInterval(timer);
-      alert('Good Game!!!');
       // $('#timer').text('Timer: ' + time + 's');
     }
   }, 1000);
@@ -102,4 +132,6 @@ $('#playBtn').on('click', () => {
   setTimer();
   const userName = $('#userNameInput').val();
   $('#userDisplay').html('Welcome, ' + userName + '!');
+  $('.userName').remove();
+  $('#userNameInput').remove();
 });

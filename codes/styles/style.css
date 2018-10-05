@@ -1,7 +1,7 @@
 body {
   /* font-size: 30px;
   flex-direction: column; */
-background-image: url(http://backgroundcheckall.com/wp-content/uploads/2017/12/game-show-background-10.jpg);
+background-image: url(https://ak4.picdn.net/shutterstock/videos/2401124/thumb/1.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -13,23 +13,31 @@ background-repeat: no-repeat;
   margin: 0 auto;
 } */
 
+
 img {
-  top: 8%;
-  left: 18%;
-  position: relative;
-  max-width: 200px;
-  max-height: 180px;
+  top: 30%;
+  left: 18.332%;
+  position: fixed;
+  float: left;
+  max-width: 310px;
+  max-height: 270px;
   padding: 10px;
   margin: 10px;
   /* mix-blend-mode: multiply; */
-
+}
 
 
 }
 #timer {
+  position: fixed;
+  top: 75%;
+  left: 45%;
+  max-width: 150px;
+  float: right;
   color: white;
   font-size: 50px;
   -webkit-text-stroke: 1px white;
+  margin: 0 auto;
 
    text-shadow:
        3px 3px 0 #000,
@@ -39,14 +47,18 @@ img {
        1px 1px 0 #000;
 }
 
-
 .userName {
   background-color: white;
+  float: right;
+  left: 60%;
+  top: 35%;
+  position: fixed;
+  max-width: 400px;
   border-radius: 5px;
   border-style: solid;
   display: inline;
-  padding: 15px;
-  margin-right: 70%;
+  padding: 5px;
+
 }
 
 table {
@@ -60,6 +72,7 @@ table {
 }
 header {
   font-size: 60px;
+  float: right;
   top: 40%;
   color: grey;
   font-family: 'Bungee', cursive;
@@ -75,28 +88,42 @@ img:hover {
   background-color: green;
 }
 
-#inGame {
-    top: 38.8544372%;
-    left: 28.42673%;
-    margin-bottom: auto;
-    justify-content: center;
-    grid-column: 2;
-    position: relative;
-    margin-top: 2.8%;
-    max-width: 350px;
-    height: 300px;
-    margin-right: auto;
-    border: 1px solid #c3c3c3;
-    /* border-radius: 30%; */
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-align-content: center;
-    align-content: center;
-  border: 5px dotted red;
-  background: white;
+.userInfo {
+  background: red;
+  border-radius: 50%;
+
+  padding: 20px;
+  font-size: 50px;
+  float: right;
+  position: fixed;
+  top: 20%;
+  left: 65%;
+  max-height: 150px;
+  max-width: 250px;
 }
+
+
+#inGame {
+    position: fixed;
+    top: 9%;
+    left: 4.6445555%;
+    width: 600px;
+    height: 380px;
+    border: 25px solid black;
+    padding: 30px;
+    background: white;
+}
+
+#guessbox {
+  margin: 25px;
+  max-width: 160px;
+}
+#submitBtn {
+  margin: 20px;
+  max-width: 85px;
+  max-height: 140px;
+}
+
 .startHidden {
   max-width: 65px;
   max-height: 30px
@@ -107,7 +134,7 @@ img:hover {
 }
 
 #userDisplay {
-  font-size: 50px;
+  font-size: 25px;
   color: white;
   max-width: 300px;
   position: fixed;
@@ -121,9 +148,12 @@ img:hover {
 }
 .instruct {
   color: white;
+  position: fixed;
   font-family: 'Quicksand', sans-serif;
-  max-width: 150px;
-  float: left;
+  max-width: 300px;
+  top: 60%;
+  left: 60%;
+  float: right;
 
   border: 2px solid silver;
   text-shadow:
@@ -134,9 +164,6 @@ img:hover {
       1px 1px 0 #000;
 }
 
-.instructText {
-  z-index: 1;
-}
 
 #initQuestion {
   color: white;
@@ -144,22 +171,8 @@ img:hover {
 
 }
 
-.tracking-in-expand-fwd-top {
-  /* top: 40%; */
-	animation: tracking-in-expand-fwd-top 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+.innerGame {
+  position: absolute;
+  max-width: 300px;
 }
-
-@keyframes tracking-in-expand-fwd-top {
-  0% {
-    letter-spacing: -0.5em;
-    transform: translateZ(-700px) translateY(-500px);
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateZ(0) translateY(0);
-    opacity: 1;
-  }
 }

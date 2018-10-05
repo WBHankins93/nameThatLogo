@@ -13,22 +13,26 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.js'></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
 <body>
-
   <header class="tracking-in-expand-fwd-top">Name That Logo!</header>
+
+<div class="userInfo">
   <p id="userDisplay"></p>
+  <span id="timer">Timer: 30</span>
+</div>
 
   <div class="userName">
     <input type="text" name="" value="" id="userNameInput">
     <!-- <span id="timer">Timer: 30s</span> -->
     <!-- <button id="playBtn" type="button" name="button">START</button> -->
-  </div>
-  <span id="timer">Timer: <tag id="colorNum">30</tag>s</span>
+  <!-- </div> -->
 
-  <div id="beforeGame">
+
+  <!-- <div id="beforeGame"> -->
       <p id="initQuestion">Can you name the companies or technologies that match these logos?</p>
       <button id="playBtn">Click to play</button>
   </div>
@@ -46,16 +50,19 @@
   </div>
 
   <div id="inGame">
+    <div class="innerGame">
     <input class="startHidden" id="guessbox" type="input" name="guess" value="">
     <button class="startHidden" id="submitBtn">Submit</button>
   </div>
+  </div>
 
-
+<footer class="footer">
   <div id="afterGame">
       <!-- <p>Congratulations! Your score was:</p> -->
       <h1 id="score"></h1>
       <p id="missed"></p>
     </div>
+  </footer>
 
   <div class='answer'>
 
